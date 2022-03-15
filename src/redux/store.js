@@ -3,9 +3,11 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { contactReducer } from './slice/usersSlice';
 import { contactsApi } from './slice/contactsSlice';
 import { filterReducer } from './slice/filterSlice';
+import authSlice from './slice/authSlice';
 
 export const store = configureStore({
   reducer: {
+    authUser: authSlice,
     contacts: contactReducer,
     filter: filterReducer,
     [contactsApi.reducerPath]: contactsApi.reducer,
