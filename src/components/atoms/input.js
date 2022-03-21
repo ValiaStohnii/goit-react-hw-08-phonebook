@@ -5,7 +5,7 @@ const Input = ({ inputType, value, onChange, name, isValid, labelText }) => {
     <>
       <label htmlFor={name}>
         {labelText}
-        <input tupe={inputType} value={value} onChange={onChange} name={name} />
+        <input type={inputType} value={value} onChange={onChange} name={name} />
       </label>
     </>
   );

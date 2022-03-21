@@ -8,11 +8,11 @@ const NavBar = () => {
         <Link to="/">Sing Up</Link>
       </li>
       <li>
-        <Link to="login">Log In</Link>
+        <Link to="/login">Log In</Link>
       </li>
-      <li>
-        <Link to="logout">Log Out</Link>
-      </li>
+      {/* <li>
+        <Link to="/logout">Log Out</Link>
+      </li> */}
     </ul>
   );
 };
