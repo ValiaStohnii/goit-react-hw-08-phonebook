@@ -1,30 +1,4 @@
-// import axios from 'axios';
-
-// const http = axios.create({
-//   baseUrl: 'https://connections-api.herokuapp.com/',
-//   headers: {
-//     'Content-type': 'application/json',
-//   },
-// });
-
-// export default http;
-// /////////////////////////////////////
-
-// export const signUp = userData => {
-//   return http.post('users/signup', userData);
-// };
-
-// export const logIn = userData => {
-//   return http.post('users/login', userData);
-// };
-
-// export const logOut = () => {
-//   return http.post('users/logout');
-// };
-///////////////////////////////////
-
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
 export const usersApi = createApi({
   reducerPath: 'usersApi',
   baseQuery: fetchBaseQuery({
@@ -58,6 +32,5 @@ export const usersApi = createApi({
     }),
   }),
 });
-
 export const { useSignUpMutation, useLogInMutation, useLogOutMutation } =
   usersApi;

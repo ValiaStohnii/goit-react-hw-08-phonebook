@@ -9,7 +9,7 @@ const initialState = {
 export const authSlice = createSlice({
   name: 'authUser',
   initialState,
-  reducers: {
+  extraReducers: {
     singUpUser: (state, action) => {
       state.user = action.payload.user;
       state.token = action.payload.token;

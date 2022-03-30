@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
 // import { signUp } from 'redux/slice/requesrs';
-import { useSignUpMutation } from 'redux/slice/http-common';
+import { useSignUpMutation } from 'redux/slice/usersApiSlice';
 
 const SingupForm = () => {
   // const dispatch = useDispatch();
