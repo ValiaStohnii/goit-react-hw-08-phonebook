@@ -1,13 +1,13 @@
 import NavBar from 'components/navigation/navBar';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+// import UserMenu from 'components/navigation/userMenu';
 
 const Layout = () => {
   return (
     <div>
-      <nav>
-        <NavBar />
-      </nav>
+      {/* <UserMenu /> */}
+      <NavBar />
       <Outlet />
     </div>
   );

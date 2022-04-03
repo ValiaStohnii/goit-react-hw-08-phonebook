@@ -4,11 +4,10 @@ import { useState } from 'react';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
 // import { signUp } from 'redux/slice/requesrs';
-import { useSignUpMutation } from 'redux/slice/usersApiSlice';
 
 const SingupForm = () => {
   // const dispatch = useDispatch();
-  const [singUpUser] = useSignUpMutation();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +31,7 @@ const SingupForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    singUpUser({ name, email, password });
+
     reset();
   };
 
