@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
-// import { signUp } from 'redux/slice/requesrs';
+import authOperations from '../../redux/auth/auth-operations';
 
 const SingupForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,7 +31,7 @@ const SingupForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    dispatch(authOperations.register({ name, email, password }));
     reset();
   };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
-// import { logIn } from 'redux/slice/requesrs';
+import authOperations from '../../redux/auth/auth-operations';
 
 const LoginForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    dispatch(authOperations.logIn({ email, password }));
     reset();
   };
 

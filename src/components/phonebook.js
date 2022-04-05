@@ -10,6 +10,7 @@ const Phonebook = () => {
 
   const getFilteredContacts = () => {
     const normalizedFilter = filter.toLowerCase();
+    console.log(contacts);
     return contacts.filter(c =>
       c.name.toLowerCase().includes(normalizedFilter)
     );
