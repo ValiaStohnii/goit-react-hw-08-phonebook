@@ -15,7 +15,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import { usersApi } from './slice/usersApiSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -29,7 +28,6 @@ export const store = configureStore({
     contacts: contactReducer,
     filter: filterReducer,
     [contactsApi.reducerPath]: contactsApi.reducer,
-    // [usersApi.reducerPath]: usersApi.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({

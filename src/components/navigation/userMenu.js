@@ -5,7 +5,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  const name = useSelector(authSelectors.getUserName);
   return (
     <div>
       <span>Welcome {name}</span>
