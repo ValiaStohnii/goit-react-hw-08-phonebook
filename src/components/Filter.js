@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { filterContact } from 'redux/slice/filterSlice';
+import TextField from '@mui/material/TextField';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -10,10 +11,12 @@ const Filter = () => {
   };
 
   return (
-    <label>
-      Filter
-      <input type="text" onChange={filterChange}></input>
-    </label>
+    <TextField
+      id="outlined-name"
+      label="Filter"
+      type="text"
+      onChange={filterChange}
+    ></TextField>
   );
 };
 

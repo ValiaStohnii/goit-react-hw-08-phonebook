@@ -12,7 +12,7 @@ const UserMenu = () => {
   const name = useSelector(authSelectors.getUserName);
   return (
     <Stack spacing={2} direction="row" theme={theme}>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
         Welcome {name}
       </Typography>
       <Button

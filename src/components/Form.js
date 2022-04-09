@@ -1,5 +1,10 @@
 import { useCreateContactMutation } from 'redux/slice/contactsSlice';
 import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import theme from '../components/theme/theme';
 
 export const Form = () => {
   const [createContact, { isLoading }] = useCreateContactMutation();
@@ -33,10 +38,19 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={submitNumber}>
-      <label>
-        Name
-        <input
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '100%' },
+      }}
+      noValidate
+      autoComplete="off"
+      onSubmit={submitNumber}
+    >
+      <Stack spacing={2}>
+        <TextField
+          id="outlined-name"
+          label="Name"
           type="text"
           value={name}
           onChange={inputChange}
@@ -44,11 +58,11 @@ export const Form = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-        />
-      </label>
-      <label>
-        Number
-        <input
+        ></TextField>
+
+        <TextField
+          id="outlined-name"
+          label="Phone number"
           type="tel"
           value={number}
           onChange={inputChange}
@@ -56,14 +70,20 @@ export const Form = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-        />
-      </label>
+        ></TextField>
 
-      <button type="submit" disabled={isLoading}>
-        {isLoading && 'Add...'}
-        Add contact
-      </button>
-    </form>
+        <Button
+          theme={theme}
+          variant="contained"
+          color="primary"
+          type="submit"
+          disabled={isLoading}
+        >
+          {isLoading && 'Add...'}
+          Add contact
+        </Button>
+      </Stack>
+    </Box>
   );
 };
 // import { useState } from 'react';
