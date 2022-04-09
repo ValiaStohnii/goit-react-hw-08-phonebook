@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[206],{1206:function(e,n,o){o.r(n);o(2791);var h=o(2978),r=o(9869),t=o(184);n.default=function(){var e=(0,h.v9)(r.Z.getIsLoggedIn);return(0,t.jsx)("div",{children:e?(0,t.jsx)("h1",{children:"WELCOME"}):(0,t.jsx)("h1",{children:"Log In or Sing Up "})})}}}]);
-//# sourceMappingURL=206.6b461ef2.chunk.js.map
