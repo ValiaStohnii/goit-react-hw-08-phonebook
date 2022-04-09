@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
 import authOperations from '../../redux/auth/auth-operations';
+import Box from '@mui/material/Box';
 
 const SingupForm = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,15 @@ const SingupForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+      onSubmit={handleSubmit}
+    >
       <Input
         inputType="name"
         value={name}
@@ -68,7 +77,7 @@ const SingupForm = () => {
         isValid={true}
       />
       <Button type="submit" text="Sign Up" isActive={true} />
-    </form>
+    </Box>
   );
 };
 

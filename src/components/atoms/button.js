@@ -1,11 +1,13 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import theme from '../theme/theme';
 
-const Button = ({ type, text, onClick = null, isActive }) => {
+const FormButton = ({ type, text, onClick = null, isActive }) => {
   return (
-    <button onClick={onClick} type={type}>
+    <Button theme={theme} variant="contained" onClick={onClick} type={type}>
       {text}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default FormButton;

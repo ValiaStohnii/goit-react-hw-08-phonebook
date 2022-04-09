@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -18,7 +21,14 @@ const register = createAsyncThunk('auth/register', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    //  error.message
+    return (
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          This is an error alert — <strong>check it out!</strong>
+        </Alert>{' '}
+      </Stack>
+    );
   }
 });
 
@@ -28,7 +38,14 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    //  error.message
+    return (
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          This is an error alert — <strong>check it out!</strong>
+        </Alert>{' '}
+      </Stack>
+    );
   }
 });
 
@@ -37,7 +54,14 @@ const logOut = createAsyncThunk('auth/logout', async () => {
     await axios.post('/users/logout');
     token.unset();
   } catch (error) {
-    // Добавить обработку ошибки error.message
+    return (
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          This is an error alert — <strong>check it out!</strong>
+        </Alert>{' '}
+      </Stack>
+    );
   }
 });
 
@@ -56,7 +80,14 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      // Добавить обработку ошибки error.message
+      return (
+        <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert severity="error">
+            <AlertTitle>Error</AlertTitle>
+            This is an error alert — <strong>check it out!</strong>
+          </Alert>{' '}
+        </Stack>
+      );
     }
   }
 );

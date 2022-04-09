@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Input from '../atoms/input';
 import Button from 'components/atoms/button';
 import authOperations from '../../redux/auth/auth-operations';
+import Box from '@mui/material/Box';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,15 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+      onSubmit={handleSubmit}
+    >
       <Input
         inputType="email"
         value={email}
@@ -55,7 +64,7 @@ const LoginForm = () => {
         isValid={true}
       />
       <Button type="submit" text="Log In" isActive={true} />
-    </form>
+    </Box>
   );
 };
 
